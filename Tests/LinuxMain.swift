@@ -1,6 +1,6 @@
 import XCTest
-@testable import CoglTests
+@testable import CoglPangoTests
 
 XCTMain([
-     testCase(CoglTests.allTests),
+     testCase(CoglPangoTests.allTests),
 ])
