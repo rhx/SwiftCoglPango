@@ -1,7 +1,8 @@
 .DS_Store
 /.build
+/.docs.old
 /Packages
 /*.xcodeproj
 Package.resolved
 Package.pins
-Sources/CoglPango-1.*.swift
+*-*.swift

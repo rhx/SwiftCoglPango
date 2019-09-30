@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RendererProtocol Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/RendererProtocol" class="dashAnchor"></a>
+
+    <a title="RendererProtocol Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          CoglPango 2.62.0 Docs
+        </a>
+         (91% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/rhx/SwiftCoglPango">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftCoglPango%2Fdocsets%2FCoglPango%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">CoglPango Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      RendererProtocol Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Renderer.html">Renderer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RendererClass.html">RendererClass</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RendererPropertyName.html">RendererPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RendererSignalName.html">RendererSignalName</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Layout.html">Layout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango19ensureGlyphCacheFor6layoutySpySo01_B6LayoutVG_tF">ensureGlyphCacheFor(layout:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango22fontMapClearGlyphCache0cD0ySpySo01_b9CairoFontD0VG_tF">fontMapClearGlyphCache(fontMap:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango20fontMapCreateContext0cD0SpySo01_bF0VGSgSpySo01_b9CairoFontD0VG_tF">fontMapCreateContext(fontMap:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango18fontMapGetRenderer0cD0SpySo01_bF0VGSgSpySo01_b9CairoFontD0VG_tF">fontMapGetRenderer(fontMap:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango23fontMapGetUseMipmapping0cD0s5Int32VSpySo01_b9CairoFontD0VG_tF">fontMapGetUseMipmapping(fontMap:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango10fontMapNewSpySo01_b4FontD0VGSgyF">fontMapNew()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango20fontMapSetResolution0cD03dpiySpySo01_b9CairoFontD0VG_SdtF">fontMapSetResolution(fontMap:dpi:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango23fontMapSetUseMipmapping0cD05valueySpySo01_b9CairoFontD0VG_SbtF">fontMapSetUseMipmapping(fontMap:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango6render6layout1x1y5color5flagsySpySo01_B6LayoutVG_s5Int32VALSPySo01_A5ColorVGALtF">render(layout:x:y:color:flags:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango12renderLayout4line1x1y5colorySpySo01_bD4LineVG_s5Int32VAKSPySo01_A5ColorVGtF">renderLayout(line:x:y:color:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango20renderLayoutSubpixel6layout1x1y5color5flagsySpySo01_bD0VG_s5Int32VALSPySo01_A5ColorVGALtF">renderLayoutSubpixel(layout:x:y:color:flags:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango10showLayout11framebuffer6layout1x1y5colorySpySo01_A7TextureVG_SpySo01_bD0VGS2fSPySo01_A5ColorVGtF">showLayout(framebuffer:layout:x:y:color:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9CoglPango14showLayoutLine11framebuffer4line1x1y5colorySpySo01_A7TextureVG_SpySo01_bdE0VGS2fSPySo01_A5ColorVGtF">showLayoutLine(framebuffer:line:x:y:color:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RendererClassProtocol.html">RendererClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RendererProtocol.html">RendererProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RendererClassRef.html">RendererClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RendererRef.html">RendererRef</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:9CoglPango7FontMapa">FontMap</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>RendererProtocol</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RendererProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>The <code>RendererProtocol</code> protocol exposes the methods and properties of an underlying <code>CoglPangoRenderer</code> instance.
+The default implementation of these can be found in the protocol extension below.
+For a concrete class that implements these methods and properties, see <code><a href="../Classes/Renderer.html">Renderer</a></code>.
+Alternatively, use <code><a href="../Structs/RendererRef.html">RendererRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango16RendererProtocolP3ptrSvvp"></a>
+                    <a name="//apple_ref/swift/Property/ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango16RendererProtocolP3ptrSvvp">ptr</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Untyped pointer to the underlying <code>CoglPangoRenderer</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L232">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango16RendererProtocolP12renderer_ptrSpySo01_abC0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/renderer_ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango16RendererProtocolP12renderer_ptrSpySo01_abC0VGvp">renderer_ptr</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Typed pointer to the underlying <code>CoglPangoRenderer</code> instance.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Return the stored, untyped pointer as a typed pointer to the <code>CoglPangoRenderer</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">renderer_ptr</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglPangoRenderer</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L235">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Renderer%20Class"></a>
+                <a name="//apple_ref/swift/Section/Renderer Class" class="dashAnchor"></a>
+                <a href="#/Renderer%20Class">
+                  <h3 class="section-name">Renderer Class</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango16RendererProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0C12PropertyNameO_qd_0_qd__So13GBindingFlagsaSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AJ0mD0Rd_0_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/bind(property:to:_:flags:transformFrom:transformTo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango16RendererProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0C12PropertyNameO_qd_0_qd__So13GBindingFlagsaSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AJ0mD0Rd_0_r0_lF">bind(property:to:_:flags:transformFrom:transformTo:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bind a <code><a href="../Enums/RendererPropertyName.html">RendererPropertyName</a></code> source property to a given target object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">Q</span><span class="p">:</span> <span class="kt">PropertyNameProtocol</span><span class="p">,</span> <span class="kt">T</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="o">&gt;</span><span class="p">(</span><span class="n">property</span> <span class="nv">source_property</span><span class="p">:</span> <span class="kt"><a href="../Enums/RendererPropertyName.html">RendererPropertyName</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">target_property</span><span class="p">:</span> <span class="kt">Q</span><span class="p">,</span> <span class="n">flags</span> <span class="nv">f</span><span class="p">:</span> <span class="kt">BindingFlags</span> <span class="o">=</span> <span class="o">.</span><span class="n">default_</span><span class="p">,</span> <span class="n">transformFrom</span> <span class="nv">transform_from</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">},</span> <span class="n">transformTo</span> <span class="nv">transform_to</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">})</span> <span class="o">-&gt;</span> <span class="kt">BindingRef</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>source_property</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the source property to bind</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the target object to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target_property</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the target property to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the flags to pass to the <code>Binding</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transform_from</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>ValueTransformer</code> to use for forward transformation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transform_to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>ValueTransformer</code> to use for backwards transformation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>binding reference or <code>nil</code> in case of an error</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L360-L384">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Renderer%20Class2"></a>
+                <a name="//apple_ref/swift/Section/Renderer Class" class="dashAnchor"></a>
+                <a href="#/Renderer%20Class2">
+                  <h3 class="section-name">Renderer Class</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango16RendererProtocolPAAE7connect6signal5flags2toSuAA0C10SignalNameO_So13GConnectFlagsayyctF"></a>
+                    <a name="//apple_ref/swift/Method/connect(signal:flags:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango16RendererProtocolPAAE7connect6signal5flags2toSuAA0C10SignalNameO_So13GConnectFlagsayyctF">connect(signal:flags:to:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connect a <code><a href="../Enums/RendererSignalName.html">RendererSignalName</a></code> signal to a given signal handler.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="n">signal</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt"><a href="../Enums/RendererSignalName.html">RendererSignalName</a></span><span class="p">,</span> <span class="n">flags</span> <span class="nv">f</span><span class="p">:</span> <span class="kt">ConnectFlags</span> <span class="o">=</span> <span class="kt">ConnectFlags</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">to</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">SignalHandler</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedLong</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>signal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the signal to connect</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>signal connection flags</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>signal handler to use</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L398-L417">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
