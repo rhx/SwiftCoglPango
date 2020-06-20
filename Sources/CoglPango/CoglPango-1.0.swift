@@ -1,3 +1,33 @@
+
+func cast(_ param: UInt)   -> Int    {    Int(bitPattern: param) }
+func cast(_ param: Int)    -> UInt   {   UInt(bitPattern: param) }
+func cast(_ param: UInt16) -> Int16  {  Int16(bitPattern: param) }
+func cast(_ param: Int16)  -> UInt16 { UInt16(bitPattern: param) }
+func cast(_ param: UInt32) -> Int32  {  Int32(bitPattern: param) }
+func cast(_ param: Int32)  -> UInt32 { UInt32(bitPattern: param) }
+func cast(_ param: UInt64) -> Int64  {  Int64(bitPattern: param) }
+func cast(_ param: Int64)  -> UInt64 { UInt64(bitPattern: param) }
+func cast(_ param: Float)  -> Double { Double(param) }
+func cast(_ param: Float80) -> Double { Double(param) }
+func cast(_ param: Double) -> Float { Float(param) }
+func cast(_ param: Double) -> Float80 { Float80(param) }
+func cast<U: UnsignedInteger>(_ param: U) -> Int { Int(param) }
+func cast<S: SignedInteger>(_ param: S) -> Int { Int(param) }
+func cast<U: UnsignedInteger>(_ param: Int) -> U { U(param) }
+func cast<S: SignedInteger>(_ param: Int) -> S  { S(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Int32 { Int32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> UInt32 { UInt32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Bool { param != 0 }
+func cast<I: BinaryInteger>(_ param: Bool) -> I { param ? 1 : 0 }
+
+func cast(_ param: UnsafeRawPointer?) -> String! {
+    return param.map { String(cString: $0.assumingMemoryBound(to: CChar.self)) }
+}
+
+func cast(_ param: OpaquePointer?) -> String! {
+    return param.map { String(cString: UnsafePointer<CChar>($0)) }
+}
+
 func cast(_ param: UnsafeRawPointer) -> OpaquePointer! {
     return OpaquePointer(param)
 }
@@ -82,6 +112,7 @@ public typealias FontMap = CoglPangoFontMap
 
 
 
+
 // MARK: - RendererClass Record
 
 /// The `RendererClassProtocol` protocol exposes the methods and properties of an underlying `CoglPangoRendererClass` instance.
@@ -91,7 +122,7 @@ public typealias FontMap = CoglPangoFontMap
 ///
 
 public protocol RendererClassProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
+        /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglPangoRendererClass` instance.
@@ -104,7 +135,7 @@ public protocol RendererClassProtocol {
 ///
 
 public struct RendererClassRef: RendererClassProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
+        /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -157,7 +188,7 @@ public extension RendererClassRef {
 ///
 
 open class RendererClass: RendererClassProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
+        /// Untyped pointer to the underlying `CoglPangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -186,7 +217,7 @@ open class RendererClass: RendererClassProtocol {
         // no reference counting for CoglPangoRendererClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglPangoRendererClass`.
+    /// Do-nothing destructor for `CoglPangoRendererClass`.
     deinit {
         // no reference counting for CoglPangoRendererClass, cannot unref(cast(_ptr))
     }
@@ -254,14 +285,17 @@ open class RendererClass: RendererClassProtocol {
 
 }
 
-// MARK: - no RendererClass properties
+// MARK: no RendererClass properties
 
-// MARK: - no signals
+// MARK: no RendererClass signals
 
 
+// MARK: RendererClass Record: RendererClassProtocol extension (methods and fields)
 public extension RendererClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglPangoRendererClass` instance.
     var _ptr: UnsafeMutablePointer<CoglPangoRendererClass> { return ptr.assumingMemoryBound(to: CoglPangoRendererClass.self) }
+
+
 
 }
 
@@ -275,7 +309,7 @@ public extension RendererClassProtocol {
 ///
 
 public protocol RendererProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
+        /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglPangoRenderer` instance.
@@ -288,7 +322,7 @@ public protocol RendererProtocol {
 ///
 
 public struct RendererRef: RendererProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
+        /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
     /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -341,7 +375,7 @@ public extension RendererRef {
 ///
 
 open class Renderer: RendererProtocol {
-    /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
+        /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
     /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -370,7 +404,7 @@ open class Renderer: RendererProtocol {
         // no reference counting for CoglPangoRenderer, cannot ref(cast(renderer_ptr))
     }
 
-    /// Do-nothing destructor for`CoglPangoRenderer`.
+    /// Do-nothing destructor for `CoglPangoRenderer`.
     deinit {
         // no reference counting for CoglPangoRenderer, cannot unref(cast(renderer_ptr))
     }
@@ -451,8 +485,8 @@ public extension RendererProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RendererPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RendererPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -476,6 +510,23 @@ public extension RendererProtocol {
         }
         return rv
     }
+
+    /// Get the value of a Renderer property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: RendererPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a Renderer property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: RendererPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+    }
 }
 
 public enum RendererSignalName: String, SignalNameProtocol {
@@ -489,8 +540,8 @@ public extension RendererProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: RendererSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: RendererSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(renderer_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -511,9 +562,12 @@ public extension RendererProtocol {
     }
 }
 
+// MARK: Renderer Class: RendererProtocol extension (methods and fields)
 public extension RendererProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglPangoRenderer` instance.
     var renderer_ptr: UnsafeMutablePointer<CoglPangoRenderer> { return ptr.assumingMemoryBound(to: CoglPangoRenderer.self) }
+
+
 
 }
 
@@ -542,7 +596,7 @@ public func fontMapClearGlyphCache(fontMap font_map: UnsafeMutablePointer<CoglPa
 
 /// Create a `PangoContext` for the given `font_map`.
 public func fontMapCreateContext(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>) -> UnsafeMutablePointer<PangoContext>! {
-    let rv = cogl_pango_font_map_create_context(cast(font_map))
+    let rv: UnsafeMutablePointer<PangoContext>! = cast(cogl_pango_font_map_create_context(cast(font_map)))
     return cast(rv)
 }
 
@@ -551,7 +605,7 @@ public func fontMapCreateContext(fontMap font_map: UnsafeMutablePointer<CoglPang
 
 /// Retrieves the `CoglPangoRenderer` for the passed `font_map`.
 public func fontMapGetRenderer(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>) -> UnsafeMutablePointer<PangoRenderer>! {
-    let rv = cogl_pango_font_map_get_renderer(cast(font_map))
+    let rv: UnsafeMutablePointer<PangoRenderer>! = cast(cogl_pango_font_map_get_renderer(cast(font_map)))
     return cast(rv)
 }
 
@@ -562,7 +616,7 @@ public func fontMapGetRenderer(fontMap font_map: UnsafeMutablePointer<CoglPangoF
 /// mipmapping when rendering the glyphs.
 public func fontMapGetUseMipmapping(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>) -> CoglBool {
     let rv = cogl_pango_font_map_get_use_mipmapping(cast(font_map))
-    return rv
+    return cast(rv)
 }
 
 
@@ -570,7 +624,7 @@ public func fontMapGetUseMipmapping(fontMap font_map: UnsafeMutablePointer<CoglP
 
 /// Creates a new font map.
 public func fontMapNew() -> UnsafeMutablePointer<PangoFontMap>! {
-    let rv = cogl_pango_font_map_new()
+    let rv: UnsafeMutablePointer<PangoFontMap>! = cast(cogl_pango_font_map_new())
     return cast(rv)
 }
 
