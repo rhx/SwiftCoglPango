@@ -8,8 +8,10 @@ let package = Package(
         .library(name: "CoglPango", targets: ["CoglPango"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftPango.git", .branch("master")),
-        .package(url: "https://github.com/rhx/SwiftCogl.git", .branch("master")),
+        .package(url: "file:///Users/rh/src/swift/rh/gtk/SwiftPango", .branch("master")),
+        .package(url: "file:///Users/rh/src/swift/rh/gtk/SwiftCogl", .branch("master")),
+        //.package(url: "https://github.com/rhx/SwiftPango.git", .branch("master")),
+        //.package(url: "https://github.com/rhx/SwiftCogl.git", .branch("master")),
     ],
     targets: [
 	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango cogl-1.0 cogl-gl-1.0 cogl-path-1.0 pango pangoft2 cairo glib-2.0 gio-unix-2.0",
