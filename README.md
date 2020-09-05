@@ -2,12 +2,31 @@
 A Swift wrapper around coglpango that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftCoglPango/
 
+## What is new?
+
+Version 11 introduces a new type system into `gir2swift`,
+to ensure it has a representation of the underlying types.
+This is necessary for Swift 5.3 onwards, which requires more stringent casts.
+As a consequence, accessors can accept and return idiomatic Swift rather than
+underlying types or pointers.
+This means that a lot of the changes will be source-breaking for code that
+was compiled against libraries built with earlier versions of `gir2swift`.
+
+### Notable changes
+
+ * Requires Swift 5.2 or later
+ * Wrapper code is now `@inlinable` to enable the compiler to optimise away most of the wrappers
+ * Parameters and return types use more idiomatic Swift (e.g. `Ref` wrappers instead of pointers, `Int` instead of `gint`, etc.)
+ * Functions that take or return records now are templated instead of using the type-erased Protocol
+ * `ErrorType` has been renamed `GLibError` to ensure it neither clashes with `Swift.Error` nor the `GLib.ErrorType`  scanner enum
+ * Parameters or return types for records/classes now use the corresponding, lightweight Swift `Ref` wrapper instead of the underlying pointer
+
 
 ## Prerequisites
 
 ### Swift
 
-To build, you need at least Swift 4.2 (Swift 5.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
+To build, you need at least Swift 5.2 (Swift 5.3+ should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
 	Apple Swift version 5.2.4 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
@@ -16,28 +35,28 @@ To build, you need at least Swift 4.2 (Swift 5.x should work fine), download fro
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 5.2.4 (swift-5.2-RELEASE)
+	Swift version 5.2.5 (swift-5.2.5-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
-### GLib 2.46 or higher and cogl
+### GLib 2.56 or higher, Cogl, and Pango
 
-These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58,  2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with glib-2.56, 2.58,  2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
 ##### Ubuntu
 
-On Ubuntu 18.04 and 16.04 you can use the gtk that comes with the distribution.  Just install with the `apt` package manager:
+On Ubuntu 20.04 and 18.04 you can use the gtk that comes with the distribution.  Just install with the `apt` package manager:
 
 	sudo apt update
-	sudo apt install libcogl-dev libcogl-gobject2 gobject-introspection libgirepository1.0-dev libxml2-dev
+	sudo apt install libcogl-dev libcogl-pango-dev gobject-introspection libgirepository1.0-dev libxml2-dev
 
 If you prefer a newer version of gtk, you can also install it from the GNOME 3 Staging PPA (see https://launchpad.net/~gnome3-team/+archive/ubuntu/gnome3-staging), but be aware that this can be a bit dangerous (as this removes packages that can be vital, particularly if you use a GNOME-based desktop), so only do this if you know what you are doing:
 
 	sudo add-apt-repository ppa:gnome3-team/gnome3-staging
 	sudo apt update
 	sudo apt dist-upgrade
-	sudo apt install libcogl-dev libcogl-gobject2 gobject-introspection libgirepository1.0-dev libxml2-dev
+	sudo apt install libcogl-dev libcogl-pango-dev gobject-introspection libgirepository1.0-dev libxml2-dev
 
 ##### Fedora
 
