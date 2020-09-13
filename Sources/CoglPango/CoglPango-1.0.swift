@@ -116,7 +116,7 @@ public extension RendererClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -306,7 +306,7 @@ public extension RendererClassProtocol {
 /// Alternatively, use `RendererRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 
-public protocol RendererProtocol {
+public protocol RendererProtocol: Pango.RendererProtocol {
         /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -380,7 +380,7 @@ public extension RendererRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -403,17 +403,13 @@ public extension RendererRef {
 /// Use `Renderer` as a strong reference or owner of a `CoglPangoRenderer` instance.
 ///
 
-open class Renderer: RendererProtocol {
-        /// Untyped pointer to the underlying `CoglPangoRenderer` instance.
-    /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
+open class Renderer: Pango.Renderer, RendererProtocol {
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: pointer to the underlying object
     @inlinable public init(_ op: UnsafeMutablePointer<CoglPangoRenderer>) {
-        ptr = UnsafeMutableRawPointer(op)
+        super.init(cPointer: op)
     }
 
     /// Designated initialiser from a constant pointer to the underlying `C` data type.
@@ -421,7 +417,7 @@ open class Renderer: RendererProtocol {
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: pointer to the underlying object
     @inlinable public init(_ op: UnsafePointer<CoglPangoRenderer>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
     }
 
     /// Optional initialiser from a non-mutating `gpointer` to
@@ -429,9 +425,9 @@ open class Renderer: RendererProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
+    @inlinable override public init!(gpointer op: gpointer?) {
         guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
+        super.init(raw: p)
     }
 
     /// Optional initialiser from a non-mutating `gconstpointer` to
@@ -439,9 +435,9 @@ open class Renderer: RendererProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
         guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
+        super.init(raw: p)
     }
 
     /// Optional initialiser from a constant pointer to the underlying `C` data type.
@@ -450,7 +446,7 @@ open class Renderer: RendererProtocol {
     /// - Parameter op: pointer to the underlying object
     @inlinable public init!(_ op: UnsafePointer<CoglPangoRenderer>?) {
         guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
+        super.init(cPointer: p)
     }
 
     /// Optional initialiser from the underlying `C` data type.
@@ -459,7 +455,7 @@ open class Renderer: RendererProtocol {
     /// - Parameter op: pointer to the underlying object
     @inlinable public init!(_ op: UnsafeMutablePointer<CoglPangoRenderer>?) {
         guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
@@ -467,80 +463,69 @@ open class Renderer: RendererProtocol {
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: pointer to the underlying object
     @inlinable public init(retaining op: UnsafeMutablePointer<CoglPangoRenderer>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `RendererProtocol`
     /// `CoglPangoRenderer` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `RendererProtocol`
     @inlinable public init<T: RendererProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
-    }
-
-    /// Do-nothing destructor for `CoglPangoRenderer`.
-    deinit {
-        // no reference counting for CoglPangoRenderer, cannot unref(renderer_ptr)
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
+    @inlinable override public init(raw p: UnsafeRawPointer) {
+        super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
+        super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+        super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
+        super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for CoglPangoRenderer, cannot ref(renderer_ptr)
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
+        super.init(retainingOpaquePointer: p)
     }
 
 
@@ -560,7 +545,7 @@ public extension RendererProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RendererPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: RendererPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
@@ -661,8 +646,8 @@ public extension RendererProtocol {
 
 
 /// Clears the glyph cache for `font_map`.
-@inlinable public func fontMapClearGlyphCache(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!) {
-    cogl_pango_font_map_clear_glyph_cache(font_map)
+@inlinable public func fontMapClearGlyphCache(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!) {
+    cogl_pango_font_map_clear_glyph_cache(fontMap)
 
 }
 
@@ -670,8 +655,8 @@ public extension RendererProtocol {
 
 
 /// Create a `PangoContext` for the given `font_map`.
-@inlinable public func fontMapCreateContext(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!) -> UnsafeMutablePointer<PangoContext>! {
-    guard let rv = cogl_pango_font_map_create_context(font_map) else { return nil }
+@inlinable public func fontMapCreateContext(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!) -> UnsafeMutablePointer<PangoContext>! {
+    guard let rv = cogl_pango_font_map_create_context(fontMap) else { return nil }
     return rv
 }
 
@@ -679,8 +664,8 @@ public extension RendererProtocol {
 
 
 /// Retrieves the `CoglPangoRenderer` for the passed `font_map`.
-@inlinable public func fontMapGetRenderer(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!) -> RendererRef! {
-    guard let rv = RendererRef(gconstpointer: gconstpointer(cogl_pango_font_map_get_renderer(font_map))) else { return nil }
+@inlinable public func fontMapGetRenderer(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!) -> UnsafeMutablePointer<PangoRenderer>! {
+    guard let rv = cogl_pango_font_map_get_renderer(fontMap) else { return nil }
     return rv
 }
 
@@ -689,8 +674,8 @@ public extension RendererProtocol {
 
 /// Retrieves whether the `CoglPangoRenderer` used by `font_map` will use
 /// mipmapping when rendering the glyphs.
-@inlinable public func fontMapGetUseMipmapping(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!) -> CoglBool {
-    let rv = cogl_pango_font_map_get_use_mipmapping(font_map)
+@inlinable public func fontMapGetUseMipmapping(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!) -> CoglBool {
+    let rv = cogl_pango_font_map_get_use_mipmapping(fontMap)
     return rv
 }
 
@@ -710,8 +695,8 @@ public extension RendererProtocol {
 /// between points specified in a `PangoFontDescription` and Cogl units.
 /// The default value is `96`, meaning that a 10 point font will be 13
 /// units high. (10 * 96. / 72. = 13.3).
-@inlinable public func fontMapSetResolution(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!, dpi: CDouble) {
-    cogl_pango_font_map_set_resolution(font_map, dpi)
+@inlinable public func fontMapSetResolution(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!, dpi: CDouble) {
+    cogl_pango_font_map_set_resolution(fontMap, dpi)
 
 }
 
@@ -720,8 +705,8 @@ public extension RendererProtocol {
 
 /// Sets whether the renderer for the passed font map should use
 /// mipmapping when rendering a `PangoLayout`.
-@inlinable public func fontMapSetUseMipmapping(fontMap font_map: UnsafeMutablePointer<CoglPangoFontMap>!, value: CoglBool) {
-    cogl_pango_font_map_set_use_mipmapping(font_map, value)
+@inlinable public func fontMapSetUseMipmapping(fontMap: UnsafeMutablePointer<CoglPangoFontMap>!, value: CoglBool) {
+    cogl_pango_font_map_set_use_mipmapping(fontMap, value)
 
 }
 
