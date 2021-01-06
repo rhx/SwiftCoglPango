@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CoglPango  Reference</title>
+    <title>Enumerations  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,8 +14,9 @@
   </head>
   <body>
 
+    <a name="//apple_ref/swift/Section/Enumerations" class="dashAnchor"></a>
 
-    <a title="CoglPango  Reference"></a>
+    <a title="Enumerations  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -49,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">CoglPango Reference</a>
       <img class="carat" src="img/carat.png" />
-      CoglPango  Reference
+      Enumerations  Reference
     </p>
 
     <div class="content-wrapper">
@@ -165,116 +166,91 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            
-            <h1 id='swiftcoglpango' class='heading'>SwiftCoglPango</h1>
-
-<p>A Swift wrapper around coglpango that is largely auto-generated from gobject-introspection.
-For up to date (auto-generated) reference documentation, see <a href="https://rhx.github.io/SwiftCoglPango/">https://rhx.github.io/SwiftCoglPango/</a></p>
-<h2 id='what-is-new' class='heading'>What is new?</h2>
-
-<p>Version 11 introduces a new type system into <code>gir2swift</code>,
-to ensure it has a representation of the underlying types.
-This is necessary for Swift 5.3 onwards, which requires more stringent casts.
-As a consequence, accessors can accept and return idiomatic Swift rather than
-underlying types or pointers.
-This means that a lot of the changes will be source-breaking for code that
-was compiled against libraries built with earlier versions of <code>gir2swift</code>.</p>
-<h3 id='notable-changes' class='heading'>Notable changes</h3>
-<div class="aside aside-requires">
-    <p class="aside-title">Requires</p>
-    Requires Swift 5.2 or later
-
-</div><ul>
-<li>Uses the namespace referenced in the <code>gir</code> file</li>
-<li>Wrapper code is now <code>@inlinable</code> to enable the compiler to optimise away most of the wrappers</li>
-<li>Functions that take or return records now are templated instead of using the type-erased Protocol</li>
-<li><code>ErrorType</code> has been renamed <code>GLibError</code> to ensure it neither clashes with <code>Swift.Error</code> nor the <code>GLib.ErrorType</code>  scanner enum</li>
-</ul>
-<h2 id='prerequisites' class='heading'>Prerequisites</h2>
-<h3 id='swift' class='heading'>Swift</h3>
-
-<p>To build, you need at least Swift 5.2 (Swift 5.3+ should work fine), download from <a href="https://swift.org/download/">https://swift.org/download/</a> &ndash; if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using <code>swift --version</code>, which should give you something like</p>
-<pre class="highlight plaintext"><code>$ swift --version
-Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
-Target: x86_64-apple-darwin20.3.0
-</code></pre>
-
-<p>on macOS, or on Linux you should get something like:</p>
-<pre class="highlight plaintext"><code>$ swift --version
-Swift version 5.3.2 (swift-5.3.2-RELEASE)
-Target: x86_64-unknown-linux-gnu
-</code></pre>
-<h3 id='glib-2-56-or-higher-cogl-and-pango' class='heading'>GLib 2.56 or higher, Cogl, and Pango</h3>
-
-<p>These Swift wrappers have been tested with glib-2.56, 2.58,  2.60, 2.62, 2.64, and 2.66.  They should work with higher versions, but YMMV.  Also make sure you have <code>gobject-introspection</code> and its <code>.gir</code> files installed.</p>
-<h4 id='linux' class='heading'>Linux</h4>
-<h5 id='ubuntu' class='heading'>Ubuntu</h5>
-
-<p>On Ubuntu 20.04 and 18.04 you can use the gtk that comes with the distribution.  Just install with the <code>apt</code> package manager:</p>
-<pre class="highlight plaintext"><code>sudo apt update
-sudo apt install libcogl-dev libcogl-pango-dev gobject-introspection libgirepository1.0-dev libxml2-dev
-</code></pre>
-
-<p>If you prefer a newer version of gtk, you can also install it from the GNOME 3 Staging PPA (see <a href="https://launchpad.net/%7Egnome3-team/+archive/ubuntu/gnome3-staging">https://launchpad.net/~gnome3-team/+archive/ubuntu/gnome3-staging</a>), but be aware that this can be a bit dangerous (as this removes packages that can be vital, particularly if you use a GNOME-based desktop), so only do this if you know what you are doing:</p>
-<pre class="highlight plaintext"><code>sudo add-apt-repository ppa:gnome3-team/gnome3-staging
-sudo apt update
-sudo apt dist-upgrade
-sudo apt install libcogl-dev libcogl-pango-dev gobject-introspection libgirepository1.0-dev libxml2-dev
-</code></pre>
-<h5 id='fedora' class='heading'>Fedora</h5>
-
-<p>On Fedora 29, you can use the gtk that comes with the distribution.  Just install with the <code>dnf</code> package manager:</p>
-<pre class="highlight plaintext"><code>sudo dnf install cogl-devel pango-devel glib2-devel gobject-introspection-devel libxml2-devel
-</code></pre>
-<h4 id='macos' class='heading'>macOS</h4>
-
-<p>On macOS, you can install glib and cogl using HomeBrew (for setup instructions, see <a href="http://brew.sh">http://brew.sh</a>).  Once you have a running HomeBrew installation, you can use it to install a native version of cogl:</p>
-<pre class="highlight plaintext"><code>brew update
-brew install cogl glib glib-networking gobject-introspection pkg-config
-</code></pre>
-<h2 id='building' class='heading'>Building</h2>
-
-<p>Normally, you don&rsquo;t build this package directly, but you embed it into your own project (see &lsquo;Embedding&rsquo; below).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using</p>
-<pre class="highlight plaintext"><code>git clone https://github.com/rhx/SwiftCoglPango.git
-cd SwiftCoglPango
-./build.sh
-./test.sh
-</code></pre>
-<h3 id='xcode' class='heading'>Xcode</h3>
-
-<p>On macOS, you can build the project using Xcode instead.  To do this, you need to create an Xcode project first, then open the project in the Xcode IDE:</p>
-<pre class="highlight plaintext"><code>./xcodegen.sh
-open CoglPango.xcodeproj
-</code></pre>
-
-<p>After that, use the (usual) Build and Test buttons to build/test this package.</p>
-<h2 id='documentation' class='heading'>Documentation</h2>
-
-<p>You can find reference documentation inside the <a href="https://rhx.github.io/SwiftCoglPango/">docs</a> folder.
-This was generated using the <a href="https://github.com/realm/jazzy">jazzy</a> tool.
-If you want to generate your own documentation, matching your local installation,
-you can use the <code>generate-documentation.sh</code> script in the repository.
-Unfortunately, at this stage <a href="https://github.com/realm/jazzy">jazzy</a> only works on macOS (and crashes under Linux), so this will currently only work on a Mac.</p>
-<h2 id='troubleshooting' class='heading'>Troubleshooting</h2>
-
-<p>Here are some common errors you might encounter and how to fix them.</p>
-<h3 id='old-swift-toolchain-or-xcode' class='heading'>Old Swift toolchain or Xcode</h3>
-
-<p>If you get an error such as</p>
-<pre class="highlight plaintext"><code>$ ./build.sh 
-error: unable to invoke subcommand: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-package (No such file or directory)
-</code></pre>
-
-<p>this probably means that your Swift toolchain is too old.  Make sure the latest toolchain is the one that is found when you run the Swift compiler (see above).</p>
-
-<p>If you get an older version, make sure that the right version of the swift compiler is found first in your <code>PATH</code>.  On macOS, use xcode-select to select and install the latest version, e.g.:</p>
-<pre class="highlight plaintext"><code>sudo xcode-select -s /Applications/Xcode.app
-xcode-select --install
-</code></pre>
+            <h1>Enumerations</h1>
+            <p>The following enumerations are available globally.</p>
 
           </div>
         </section>
 
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Renderer%20Class"></a>
+                <a name="//apple_ref/swift/Section/Renderer Class" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Renderer%20Class"></a>
+                  <h3 class="section-name"><p>Renderer Class</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango20RendererPropertyNameO"></a>
+                    <a name="//apple_ref/swift/Enum/RendererPropertyName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango20RendererPropertyNameO">RendererPropertyName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/RendererPropertyName.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RendererPropertyName</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">PropertyNameProtocol</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L535-L537">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CoglPango18RendererSignalNameO"></a>
+                    <a name="//apple_ref/swift/Enum/RendererSignalName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CoglPango18RendererSignalNameO">RendererSignalName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/RendererSignalName.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RendererSignalName</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">SignalNameProtocol</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCoglPango/tree/generated/Sources/CoglPango/CoglPango-1.0.swift#L592-L595">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
       </article>
     </div>
