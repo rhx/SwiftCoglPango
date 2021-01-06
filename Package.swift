@@ -6,8 +6,8 @@ let package = Package(
     name: "CoglPango",
     products: [ .library(name: "CoglPango", targets: ["CoglPango"]) ],
     dependencies: [
-        .package(name: "Pango", url: "https://github.com/rhx/SwiftPango.git", .branch("master")),
-        .package(name: "Cogl", url: "https://github.com/rhx/SwiftCogl.git", .branch("master")),
+        .package(name: "Pango", url: "https://github.com/rhx/SwiftPango.git", .branch("main")),
+        .package(name: "Cogl", url: "https://github.com/rhx/SwiftCogl.git", .branch("main")),
     ],
     targets: [
 	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango cogl-1.0 cogl-gl-1.0 cogl-path-1.0 pango pangoft2 cairo glib-2.0 gio-unix-2.0",
