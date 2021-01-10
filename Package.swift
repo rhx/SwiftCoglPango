@@ -11,7 +11,7 @@ let package = Package(
         .package(name: "Cogl", url: "https://github.com/rhx/SwiftCogl.git", .branch("development")),
     ],
     targets: [
-	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango",
+	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango-1.0",
 	    providers: [
 		.brew(["cogl", "cairo", "glib", "glib-networking", "gobject-introspection"]),
 		.apt(["libcogl-pango-dev", "libcogl-gles2-dev", "libcogl-path-dev", "libcogl-dev", "libcairo2-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
