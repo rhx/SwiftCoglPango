@@ -1,6 +1,13 @@
 # SwiftCoglPango
+
 A Swift wrapper around coglpango that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftCoglPango/
+
+![macOS 11 build](https://github.com/rhx/SwiftCoglPango/workflows/macOS%2011/badge.svg)
+![macOS 10.15 build](https://github.com/rhx/SwiftCoglPango/workflows/macOS%2010.15/badge.svg)
+![Ubuntu 20.04 build](https://github.com/rhx/SwiftCoglPango/workflows/Ubuntu%2020.04/badge.svg)
+![Ubuntu 18.04 build](https://github.com/rhx/SwiftCoglPango/workflows/Ubuntu%2018.04/badge.svg)
+
 
 ## What is new?
 
