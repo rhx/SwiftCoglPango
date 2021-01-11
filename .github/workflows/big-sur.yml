@@ -46,7 +46,7 @@ jobs:
       - name: Build SwiftCoglPango
         run: |
           cd SwiftCoglPango
-          swift build -Xswiftc -suppresswarnings `./run-gir2swift.sh flags -noUpdate`
+          swift build -Xswiftc -suppress-warnings `./run-gir2swift.sh flags -noUpdate`
           cd ..
 
       - name: Test SwiftCoglPango

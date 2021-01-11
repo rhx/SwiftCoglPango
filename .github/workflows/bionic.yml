@@ -43,7 +43,7 @@ jobs:
       - name: Build SwiftCoglPango
         run: |
           cd SwiftCoglPango
-          swift build -Xswiftc -suppresswarnings
+          swift build -Xswiftc -suppress-warnings
           cd ..
 
       - name: Test SwiftCoglPango
