@@ -8,7 +8,6 @@ For up to date (auto-generated) reference documentation, see https://rhx.github.
 ![Ubuntu 20.04 build](https://github.com/rhx/SwiftCoglPango/workflows/Ubuntu%2020.04/badge.svg)
 ![Ubuntu 18.04 build](https://github.com/rhx/SwiftCoglPango/workflows/Ubuntu%2018.04/badge.svg)
 
-
 ## What is new?
 
 The current version introduces a new build system and signal generation code contributed by Mikoláš Stuchlík (see the **Building** Section below).
@@ -156,7 +155,7 @@ this probably means that your Swift toolchain is too old.  Make sure the latest 
 
 ### Known Issues
 
- * When building, a lot of warnings appear.  This is largely an issue with automatic `RawRepresentable` conformance in the Swift Standard library.  As a workaryound, you can turn this off by passing the `-Xswiftc -suppresswarnings` parameter when building.
+ * When building, a lot of warnings appear.  This is largely an issue with automatic `RawRepresentable` conformance in the Swift Standard library.  As a workaryound, you can turn this off by passing the `-Xswiftc -suppress-warnings` parameter when building.
  * The current build system does not support directory paths with spaces (e.g. the `My Drive` directory used by Google Drive File Stream).
  * BUILD_DIR is not supported in the current build system.
  
