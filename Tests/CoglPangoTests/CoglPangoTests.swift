@@ -1,18 +1,19 @@
 import XCTest
+import CPango
+import CCoglPango
 import Cogl
+import Pango
 @testable import CoglPango
 
 class CoglPangoTests: XCTestCase {
-    func testFixedPoint() {
-        let x = Fixed(doubleValue: 0.5)
-        let y = mul(x, Fixed(intValue: 2))
-        XCTAssertEqual(y.intValue, 1)
+    func testEmpty() {
+        // FIXME: implement test
     }
 
 
     static var allTests : [(String, (CoglPangoTests) -> () throws -> Void)] {
         return [
-            ("testFixedPoint", testFixedPoint),
+            ("testEmpty", testEmpty),
         ]
     }
 }
