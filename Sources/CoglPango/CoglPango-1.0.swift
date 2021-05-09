@@ -64,6 +64,8 @@ public protocol RendererClassProtocol {
     /// Typed pointer to the underlying `CoglPangoRendererClass` instance.
     var _ptr: UnsafeMutablePointer<CoglPangoRendererClass>! { get }
 
+    /// Required Initialiser for types conforming to `RendererClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RendererClassRef` type acts as a lightweight Swift reference to an underlying `CoglPangoRendererClass` instance.
@@ -174,6 +176,8 @@ public protocol RendererProtocol: Pango.RendererProtocol {
     /// Typed pointer to the underlying `CoglPangoRenderer` instance.
     var renderer_ptr: UnsafeMutablePointer<CoglPangoRenderer>! { get }
 
+    /// Required Initialiser for types conforming to `RendererProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RendererRef` type acts as a lightweight Swift reference to an underlying `CoglPangoRenderer` instance.
@@ -367,14 +371,14 @@ open class Renderer: Pango.Renderer, RendererProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -575,7 +579,7 @@ public extension RendererProtocol {
 
 
 /// Draws a solidly coloured `layout` on the given `framebuffer` at (`x`,
-/// `y`) within the `framebuffer`<!-- -->'s current model-view coordinate
+/// `y`) within the `framebuffer`&lt;!-- --&gt;'s current model-view coordinate
 /// space.
 ///
 /// **render_layout is deprecated:**
@@ -601,7 +605,7 @@ public extension RendererProtocol {
 
 
 /// Draws a solidly coloured `layout` on the given `framebuffer` at (`x`,
-/// `y`) within the `framebuffer`<!-- -->'s current model-view coordinate
+/// `y`) within the `framebuffer`&lt;!-- --&gt;'s current model-view coordinate
 /// space.
 ///
 /// **render_layout_subpixel is deprecated:**
@@ -615,7 +619,7 @@ public extension RendererProtocol {
 
 
 /// Draws a solidly coloured `layout` on the given `framebuffer` at (`x`,
-/// `y`) within the `framebuffer`<!-- -->'s current model-view coordinate
+/// `y`) within the `framebuffer`&lt;!-- --&gt;'s current model-view coordinate
 /// space.
 @inlinable public func showLayout<ColorT: Cogl.ColorProtocol, LayoutT: Pango.LayoutProtocol>(framebuffer: UnsafeMutablePointer<CoglFramebuffer>!, layout: LayoutT, x: CFloat, y: CFloat, color: ColorT) {
     cogl_pango_show_layout(framebuffer, layout.layout_ptr, x, y, color.color_ptr)
@@ -626,7 +630,7 @@ public extension RendererProtocol {
 
 
 /// Draws a solidly coloured `line` on the given `framebuffer` at (`x`,
-/// `y`) within the `framebuffer`<!-- -->'s current model-view coordinate
+/// `y`) within the `framebuffer`&lt;!-- --&gt;'s current model-view coordinate
 /// space.
 @inlinable public func showLayoutLine<ColorT: Cogl.ColorProtocol, LayoutLineT: Pango.LayoutLineProtocol>(framebuffer: UnsafeMutablePointer<CoglFramebuffer>!, line: LayoutLineT, x: CFloat, y: CFloat, color: ColorT) {
     cogl_pango_show_layout_line(framebuffer, line.layout_line_ptr, x, y, color.color_ptr)
