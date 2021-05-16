@@ -6,9 +6,9 @@ let package = Package(
     name: "CoglPango",
     products: [ .library(name: "CoglPango", targets: ["CoglPango"]) ],
     dependencies: [
-        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("main")),
-        .package(name: "Pango", url: "https://github.com/rhx/SwiftPango.git", .branch("main")),
-        .package(name: "Cogl", url: "https://github.com/rhx/SwiftCogl.git", .branch("main")),
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
+        .package(name: "Pango", url: "https://github.com/rhx/SwiftPango.git", .branch("development")),
+        .package(name: "Cogl", url: "https://github.com/rhx/SwiftCogl.git", .branch("development")),
     ],
     targets: [
 	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango-1.0",
