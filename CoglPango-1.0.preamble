@@ -5,4 +5,5 @@ import CCoglPango
 import GLib
 import GLibObject
 import Pango
+import PangoCairo
 import Cogl
