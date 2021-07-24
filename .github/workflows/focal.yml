@@ -64,5 +64,5 @@ jobs:
         with:
           name: build-artifact-20.04-5.3
           path: |
-            SwiftCoglPango/
+            SwiftCoglPango/Sources/
           retention-days: 1
