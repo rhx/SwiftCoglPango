@@ -67,5 +67,5 @@ jobs:
         with:
           name: build-artefact-catalina
           path: |
-            SwiftCoglPango/
+            SwiftCoglPango/Sources/
           retention-days: 1
