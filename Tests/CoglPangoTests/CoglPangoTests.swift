@@ -9,11 +9,4 @@ class CoglPangoTests: XCTestCase {
     func testEmpty() {
         // FIXME: implement test
     }
-
-
-    static var allTests : [(String, (CoglPangoTests) -> () throws -> Void)] {
-        return [
-            ("testEmpty", testEmpty),
-        ]
-    }
 }
