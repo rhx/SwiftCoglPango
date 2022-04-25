@@ -2,7 +2,7 @@ name: Ubuntu 20.04
 
 # Dependencies of this package
 env:
-  UBUNTU_APT: ${{ 'libcogl-dev gir1.2-cogl-1.0 libcogl-pango-dev gir1.2-coglpango-1.0 libgdk-pixbuf2.0-dev gir1.2-gdkpixbuf-2.0 libpango1.0-dev gir1.2-pango-1.0 libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
+  UBUNTU_APT: ${{ 'libcogl-pango-dev libcogl-dev gir1.2-coglpango-1.0 gir1.2-cogl-1.0 libcogl-pango-dev gir1.2-coglpango-1.0 libgdk-pixbuf2.0-dev gir1.2-gdkpixbuf-2.0 libpango1.0-dev gir1.2-pango-1.0 libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
 
 on:
   push:
@@ -19,6 +19,11 @@ jobs:
   build-ubuntu-20_04-swift-latest:
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
+      - uses: YOCKOW/Action-setup-swift@v1
+        with:
+          swift-version: '5.6.1'
+
       - name: Print Swift version to confirm
         run: swift --version
 
@@ -33,13 +38,6 @@ jobs:
         with:
           path: SwiftCoglPango
 
-      - name: Build Swift Wrappers
-        run: |
-          cd SwiftCoglPango
-          ./run-gir2swift.sh
-          echo "GIR2SWIFT_PATH=${PWD}/checkouts/gir2swift/.build/release/gir2swift" >> $GITHUB_ENV
-          cd ..
-
       - name: Build SwiftCoglPango
         run: |
           cd SwiftCoglPango
@@ -52,17 +50,9 @@ jobs:
           swift test
           cd ..
 
-      - name: Remove unneeded files and archive artifacts
+      - name: Remove unneeded files and archive artefacts
         run: | 
           cd SwiftCoglPango
           swift package clean
           rm -rf .build/repositories
           cd ..
-
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact-20.04-5.3
-          path: |
-            SwiftCoglPango/Sources/
-          retention-days: 1
