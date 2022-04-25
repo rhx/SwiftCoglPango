@@ -9,6 +9,7 @@ let package = Package(
         .package(url: "https://github.com/rhx/gir2swift.git",       branch: "development"),
         .package(url: "https://github.com/rhx/SwiftPangoCairo.git", branch: "development"),
         .package(url: "https://github.com/rhx/SwiftCogl.git",       branch: "development"),
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
 	.systemLibrary(name: "CCoglPango", pkgConfig: "cogl-pango-1.0",
